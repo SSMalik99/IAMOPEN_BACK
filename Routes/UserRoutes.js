@@ -9,7 +9,7 @@ const {
 //   showCurrentUser,
   updateUser,
   updateUserPassword,
-} = require('../controllers/UserController');
+} = require('../Controllers/UserController');
 
 router.route("/").get(authenticateUser, getAllUsers);
 
