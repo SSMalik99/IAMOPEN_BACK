@@ -4,14 +4,14 @@ const User = require('../Models/User');
 
 const getAllUsers = async (req, res) => {
 
-  const users = await User.find({ role: 'user' }).select('-password');
+  const users = await User.find({ role: 'user' })
 
   res.status(200).json({ users });
 
 };
 
 const getUserWithEmailAndPassword = async (req, res) => {
-    const user = await User.findOne({email:req.email, password: req.password})
+    const user = await User.findOne({_id:req.param.id})
 
     if(!user) {
         return false
