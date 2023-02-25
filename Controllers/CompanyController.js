@@ -28,7 +28,6 @@ const getSingleCompany = async (req, res) => {
     res.status(200).json(companies)
 }
 
-c
 
 const companyLogin = async (req, res) => {
     let email = req.email;
@@ -115,7 +114,7 @@ const registerCompany = async (req, res) => {
 
 const updateCompany = async (req, res) => {
     data = req.body;
-
+// TODO -- > Update company
     let company = await Company.findByIdAndUpdate(req.body.id, data);
 }
 
