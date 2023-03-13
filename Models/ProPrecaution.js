@@ -8,7 +8,7 @@ const ProPrecautionSchema = new mongoose.Schema({
     description : {
         type: String
     },
-    Product : {
+    product : {
         type: mongoose.Schema.ObjectId,
         ref: 'Product'
     }

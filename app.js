@@ -18,7 +18,7 @@ app.use('/api/v1/users', userRouter);
 
 // register routes for comapny
 app.use("/api/v1/company", companyRouter)
-app.use("/api/v1/company", productRouter)
+app.use("/api/v1/product", productRouter)
 
 initMongo(process.env.MONGOURI)
 

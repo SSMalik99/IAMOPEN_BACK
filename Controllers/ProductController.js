@@ -4,7 +4,7 @@ const Product = require("../Models/Product")
 
 const getAllProduct = async (req, res) => {
     let products = await Product.find({})
-    res.status(200).json(companies)
+    res.status(200).json(products)
 }
 
 const getSingleProduct = async (req, res) => {
@@ -21,6 +21,17 @@ const getSingleProduct = async (req, res) => {
     
     let products = await Product.find({_id:productId})
     res.status(200).json(products)
+}
+
+const getProductsForCompany = async (req, res) => {
+    const companyId = req.companyId
+    let products = await Product.find({comkpany:companyId})
+
+    res.status(201).json({
+        success: true,
+        message: "Product List for the company.",
+        data : products
+    })
 }
 
 
@@ -90,5 +101,6 @@ const updateProduct = async (req, res) => {
 module.exports = {
     getAllProduct,
     getSingleProduct,
-    addProduct
+    addProduct,
+    getProductsForCompany
 }
