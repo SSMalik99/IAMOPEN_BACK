@@ -1,4 +1,4 @@
-const { response } = require("express")
+
 const ProductPrecaution = require("../Models/ProPrecaution")
 
 
@@ -13,7 +13,7 @@ const getSinglePrecaution = async (req, res) => {
     if (!precautionId ){
 
     
-        response.status(400).json({
+        res.status(400).json({
             status: false,
             message: "please provide product precaution Id"
         })
@@ -28,7 +28,7 @@ const getPrecautionForProduct = async (req, res) => {
     const productId = req.prductId
     let productPrecaution = await ProductPrecaution.find({product:productId})
 
-    res.status(201).json({
+    res.status(200).json({
         success: true,
         message: "Product List for the company.",
         data : productPrecaution

@@ -1,4 +1,4 @@
-const { response } = require("express")
+
 const Company = require("../Models/Company")
 
 
@@ -17,7 +17,7 @@ const getSingleCompany = async (req, res) => {
     if (!companyId ){
 
     
-        response.status(400).json({
+        res.status(400).json({
             status: false,
             message: "please provide company Id"
         })

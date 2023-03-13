@@ -13,6 +13,7 @@ const userRouter = require('./Routes/UserRoutes')
 const companyRouter = require("./Routes/CompanyRoutes")
 const productRouter = require("./Routes/ProductRoutes")
 const productPrecautionRouter = require("./Routes/ProductPrecaution")
+const tutorialRouts = require("./Routes/TutorialRoutes")
 
 // Register routes for the user
 app.use('/api/v1/users', userRouter);
@@ -21,6 +22,7 @@ app.use('/api/v1/users', userRouter);
 app.use("/api/v1/company", companyRouter)
 app.use("/api/v1/product", productRouter)
 app.use("/api/v1/product_precaution", productPrecautionRouter)
+app.use("/api/v1/tutorial", tutorialRouts)
 
 initMongo(process.env.MONGOURI)
 

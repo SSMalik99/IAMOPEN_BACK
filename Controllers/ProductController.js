@@ -1,4 +1,4 @@
-const { response } = require("express")
+
 const Product = require("../Models/Product")
 
 
@@ -12,7 +12,7 @@ const getSingleProduct = async (req, res) => {
     if (!productId ){
 
     
-        response.status(400).json({
+        res.status(400).json({
             status: false,
             message: "please provide product Id"
         })
@@ -27,7 +27,7 @@ const getProductsForCompany = async (req, res) => {
     const companyId = req.companyId
     let products = await Product.find({comkpany:companyId})
 
-    res.status(201).json({
+    res.status(200).json({
         success: true,
         message: "Product List for the company.",
         data : products

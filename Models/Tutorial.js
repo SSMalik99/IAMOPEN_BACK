@@ -15,7 +15,7 @@ const TutorialSchema = new mongoose.Schema({
         type:Boolean
 
     },
-    Product : {
+    product : {
         type: mongoose.Schema.ObjectId,
         ref: 'Product'
     }
