@@ -11,7 +11,7 @@ const ProductSchema = new mongoose.Schema({
     image: {
         type: String
     },
-    Company : {
+    company : {
         type: mongoose.Schema.ObjectId,
         ref: 'Company'
     }

@@ -11,12 +11,14 @@ app.use(express.json());
 
 const userRouter = require('./Routes/UserRoutes')
 const companyRouter = require("./Routes/CompanyRoutes")
+const productRouter = require("./Routes/ProductRoutes")
 
 // Register routes for the user
 app.use('/api/v1/users', userRouter);
 
 // register routes for comapny
 app.use("/api/v1/company", companyRouter)
+app.use("/api/v1/company", productRouter)
 
 initMongo(process.env.MONGOURI)
 
